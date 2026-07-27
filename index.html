@@ -107,6 +107,7 @@
   .hero-inner{
     opacity:0;
     animation:fadeUp 1.1s ease forwards 0.15s;
+    width: 100%;
   }
   @keyframes fadeUp{
     from{opacity:0; transform:translateY(14px);}
@@ -150,6 +151,21 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+  }
+  .parents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  @media (max-width: 520px) {
+    .parents-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
   }
   .gold-text {
     color: var(--gold);
@@ -505,13 +521,15 @@
 
       <!-- Parents integrated in Hero -->
       <div class="hero-parents">
-        <div>
-          <span class="he">הורי החתן: מיכאל וסנדרין <span class="gold-text">מערק</span></span>
-          <span class="fr">Parents du marié : Michaël et Sandrine <span class="gold-text">Maarek</span></span>
-        </div>
-        <div>
-          <span class="he">הורי הכלה: אברהם ואורלי <span class="gold-text">זייני</span></span>
-          <span class="fr">Parents de la mariée : Avraham et Orly <span class="gold-text">Zini</span></span>
+        <div class="parents-grid">
+          <div>
+            <span class="he"><strong>הורי החתן</strong><br>מיכאל וסנדרין <span class="gold-text">מערק</span></span>
+            <span class="fr"><strong>Parents du marié</strong><br>Michaël et Sandrine <span class="gold-text">Maarek</span></span>
+          </div>
+          <div>
+            <span class="he"><strong>הורי הכלה</strong><br>אברהם ואורלי <span class="gold-text">זייני</span></span>
+            <span class="fr"><strong>Parents de la mariée</strong><br>Avraham et Orly <span class="gold-text">Zini</span></span>
+          </div>
         </div>
         
         <!-- Grandparents briefly mentioned -->
@@ -528,6 +546,7 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- EVENT DETAILS -->
