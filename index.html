@@ -141,6 +141,21 @@
     letter-spacing:0.03em;
   }
 
+  .hero-parents {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(171,138,86, 0.3);
+    font-size: 17px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .gold-text {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
   .scroll-cue{
     position:absolute;
     bottom:32px;
@@ -169,47 +184,6 @@
     font-size:clamp(32px,4vw,42px);
     color:var(--forest-deep);
     margin-top:10px;
-  }
-
-  /* ---------- COUNTDOWN ---------- */
-  .countdown{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:clamp(2px, 1vw, 15px);
-    flex-wrap:nowrap; /* Strict single line */
-    width:100%;
-    max-width:640px;
-    margin:0 auto;
-    direction:ltr; 
-  }
-  .cd-box{
-    text-align:center;
-    flex: 1 1 0px; /* Forces equal sizing & ensures it can shrink */
-    min-width: 0; /* Prevents overflow pushing elements down */
-    padding: 5px 0; /* Removed horizontal padding to save space */
-  }
-  .cd-num{
-    font-family:'Frank Ruhl Libre', serif;
-    font-size:clamp(20px, 5.5vw, 56px); /* Further optimized scaling */
-    color:var(--forest-deep);
-    font-weight:400;
-    font-variant-numeric:tabular-nums;
-    line-height:1;
-  }
-  .cd-label{
-    margin-top:6px;
-    font-size:clamp(9px, 2.5vw, 14px);
-    letter-spacing:0.05em;
-    color:var(--ink-soft);
-  }
-  [lang="fr"] .cd-label { text-transform: uppercase; }
-  .cd-sep{
-    font-size:clamp(16px, 4vw, 32px);
-    color:var(--gold-light);
-    font-weight:300;
-    margin-top:-15px;
-    flex-shrink:0; /* Ensures the colons don't get squashed */
   }
 
   /* ---------- EVENT DETAILS ---------- */
@@ -278,63 +252,6 @@
     background:var(--forest-deep);
     color:var(--white);
     transform:translateY(-2px);
-  }
-
-  /* ---------- PARENTS & GRANDPARENTS ---------- */
-  .parents{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:48px;
-    max-width:640px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .parent-col .role{
-    font-size:13px;
-    letter-spacing:0.2em;
-    color:var(--gold);
-    margin-bottom:12px;
-  }
-  [lang="fr"] .parent-col .role { text-transform: uppercase; }
-  .parent-col .who{
-    font-family:'Frank Ruhl Libre', serif;
-    font-size:28px;
-    color:var(--forest-deep);
-    margin-bottom:8px;
-  }
-  .parent-col .parents-names{
-    font-size:16px;
-    color:var(--ink-soft);
-  }
-
-  .grandparents {
-    margin-top: 50px;
-    padding-top: 36px;
-    border-top: 1px solid var(--line);
-    text-align: center;
-  }
-  .grandparents .gp-title {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 22px;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-  .gp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .gp-col {
-    color: var(--ink-soft);
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  
-  @media (max-width:520px){
-    .parents, .gp-grid {grid-template-columns:1fr; gap:40px;}
-    .grandparents {margin-top: 40px;}
   }
 
   /* ---------- RSVP ---------- */
@@ -495,6 +412,47 @@
   html[dir="ltr"] .error-msg { text-align: left; }
   .error-msg.show{display:block;}
 
+  /* ---------- COUNTDOWN ---------- */
+  .countdown{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:clamp(2px, 1vw, 15px);
+    flex-wrap:nowrap;
+    width:100%;
+    max-width:640px;
+    margin:0 auto;
+    direction:ltr; 
+  }
+  .cd-box{
+    text-align:center;
+    flex: 1 1 0px;
+    min-width: 0;
+    padding: 5px 0;
+  }
+  .cd-num{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:clamp(20px, 5.5vw, 56px);
+    color:var(--forest-deep);
+    font-weight:400;
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+  .cd-label{
+    margin-top:6px;
+    font-size:clamp(9px, 2.5vw, 14px);
+    letter-spacing:0.05em;
+    color:var(--ink-soft);
+  }
+  [lang="fr"] .cd-label { text-transform: uppercase; }
+  .cd-sep{
+    font-size:clamp(16px, 4vw, 32px);
+    color:var(--gold-light);
+    font-weight:300;
+    margin-top:-15px;
+    flex-shrink:0;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding:70px 24px 50px;
@@ -518,7 +476,7 @@
   <!-- BUTTON TOGGLE LANG -->
   <button id="langToggle" class="lang-switch" onclick="toggleLang()">Français</button>
 
-  <!-- HERO -->
+  <!-- HERO (Main Section + Parents & Grandparents) -->
   <section class="hero">
     <div class="hero-inner wrap">
       <span class="eyebrow">
@@ -544,6 +502,31 @@
         <span class="he">ח׳ בחשוון תשפ״ז&nbsp; ·&nbsp; 19.10.2026</span>
         <span class="fr">8 Hechvan 5787&nbsp; ·&nbsp; 19.10.2026</span>
       </p>
+
+      <!-- Parents integrated in Hero -->
+      <div class="hero-parents">
+        <div>
+          <span class="he">הורי החתן: מיכאל וסנדרין <span class="gold-text">מערק</span></span>
+          <span class="fr">Parents du marié : Michaël et Sandrine <span class="gold-text">Maarek</span></span>
+        </div>
+        <div>
+          <span class="he">הורי הכלה: אברהם ואורלי <span class="gold-text">זייני</span></span>
+          <span class="fr">Parents de la mariée : Avraham et Orly <span class="gold-text">Zini</span></span>
+        </div>
+        
+        <!-- Grandparents briefly mentioned -->
+        <div style="margin-top: 14px; font-size: 14px; color: var(--gold); font-weight: 400; line-height: 1.6;">
+          <span class="he">
+            באהבה וגעגוע לסבינו וסבתותינו ז"ל:<br>
+            קליר ודוד מערק | הרב מאיר ורחל זייני | סבא לילו וממי דניז
+          </span>
+          <span class="fr">
+            Avec tendresse, en mémoire de nos grands-parents z"l :<br>
+            Clair et David Maarek | Rav Meir et Rahel Zini | Papy Lilo et Mamie Denise
+          </span>
+        </div>
+      </div>
+
     </div>
 
     <div class="scroll-cue">
@@ -553,46 +536,8 @@
     </div>
   </section>
 
-  <!-- COUNTDOWN -->
-  <section class="section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">
-          <span class="he">הספירה התחילה</span>
-          <span class="fr">Le compte à rebours a commencé</span>
-        </span>
-        <h2 class="section-title">
-          <span class="he">נשאר עד היום הגדול</span>
-          <span class="fr">Avant le grand jour</span>
-        </h2>
-      </div>
-      
-      <div class="countdown" id="countdown">
-        <div class="cd-box">
-          <div class="cd-num" id="cd-days">00</div>
-          <div class="cd-label"><span class="he">ימים</span><span class="fr">Jours</span></div>
-        </div>
-        <div class="cd-sep">:</div>
-        <div class="cd-box">
-          <div class="cd-num" id="cd-hours">00</div>
-          <div class="cd-label"><span class="he">שעות</span><span class="fr">Heures</span></div>
-        </div>
-        <div class="cd-sep">:</div>
-        <div class="cd-box">
-          <div class="cd-num" id="cd-mins">00</div>
-          <div class="cd-label"><span class="he">דקות</span><span class="fr">Minutes</span></div>
-        </div>
-        <div class="cd-sep">:</div>
-        <div class="cd-box">
-          <div class="cd-num" id="cd-secs">00</div>
-          <div class="cd-label"><span class="he">שניות</span><span class="fr">Secondes</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- EVENT DETAILS -->
-  <section>
+  <section class="section-alt">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">
@@ -603,6 +548,11 @@
           <span class="he">מתי ואיפה</span>
           <span class="fr">Où et quand</span>
         </h2>
+        <!-- Date added again under the title as requested -->
+        <div style="margin-top: 12px; font-family: 'Frank Ruhl Libre', serif; font-size: 20px; color: var(--forest);">
+          <span class="he">ח׳ בחשוון תשפ״ז | 19.10.2026</span>
+          <span class="fr">8 Hechvan 5787 | 19.10.2026</span>
+        </div>
       </div>
 
       <div class="elegant-schedule">
@@ -642,69 +592,6 @@
           <span class="fr">Ouvrir dans Waze</span>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- PARENTS & GRANDPARENTS -->
-  <section class="section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">
-          <span class="he">בשמחה רבה</span>
-          <span class="fr">Avec une grande joie</span>
-        </span>
-        <h2 class="section-title">
-          <span class="he">ההורים המאושרים</span>
-          <span class="fr">Les heureux parents</span>
-        </h2>
-      </div>
-      
-      <!-- Parents -->
-      <div class="parents">
-        <div class="parent-col">
-          <div class="role">
-            <span class="he">החתן</span><span class="fr">Le marié</span>
-          </div>
-          <div class="who">
-            <span class="he">איתן</span><span class="fr">Ethan</span>
-          </div>
-          <div class="parents-names">
-            <span class="he">בנם של מיכאל וסנדרין מערק</span>
-            <span class="fr">Fils de Michaël et Sandrine Maarek</span>
-          </div>
-        </div>
-        <div class="parent-col">
-          <div class="role">
-            <span class="he">הכלה</span><span class="fr">La mariée</span>
-          </div>
-          <div class="who">
-            <span class="he">מוריה</span><span class="fr">Moriah</span>
-          </div>
-          <div class="parents-names">
-            <span class="he">בתם של אברהם ואורלי זייני</span>
-            <span class="fr">Fille d'Avraham et Orly Zini</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Grandparents -->
-      <div class="grandparents">
-        <div class="gp-title">
-          <span class="he">מזכירים באהבה וגעגוע את סבינו וסבתותינו ז"ל</span>
-          <span class="fr">Avec tendresse, en mémoire de nos grands-parents z"l</span>
-        </div>
-        <div class="gp-grid">
-          <div class="gp-col">
-            <span class="he">קליר ודוד מערק ז"ל</span>
-            <span class="fr">Clair et David Maarek z"l</span>
-          </div>
-          <div class="gp-col">
-            <span class="he">הרב מאיר ורחל זייני ז"ל<br>סבא לילו וממי דניז ז"ל</span>
-            <span class="fr">Rav Meir et Rahel Zini z"l<br>Papy Lilo et Mamie Denise z"l</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -754,7 +641,7 @@
                 <span class="he">מגיעים בשמחה</span><span class="fr">Oui, avec joie</span>
               </div>
               <div class="choice-btn" data-val="no">
-                <span class="he">לא נוכל הפעם</span><span class="fr">Non, malheureusement</span>
+                <span class="he">לצערינו לא נוכל</span><span class="fr">Malheureusement, nous ne pourrons pas</span>
               </div>
             </div>
           </div>
@@ -771,26 +658,19 @@
                 <button type="button" class="step-btn" id="inc">+</button>
               </div>
             </div>
-
-            <div class="field">
-              <label>
-                <span class="he">לאיזה חלק מהערב תגיעו?</span>
-                <span class="fr">Pour quelle partie de la soirée ?</span>
-              </label>
-              <div class="choice-group" id="portion-group">
-                <div class="choice-btn active" data-val="all">
-                  <span class="he">להכל</span><span class="fr">Pour tout (Réception & Houppa)</span>
-                </div>
-                <div class="choice-btn" data-val="chuppah">
-                  <span class="he">רק לחופה</span><span class="fr">Uniquement la Houppa</span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <!-- Hidden inputs for Google Forms -->
+          <!-- Notes input (mapped directly to entry.56149983) -->
+          <div class="field">
+            <label>
+              <span class="he">הערות</span>
+              <span class="fr">Remarques (Optionnel)</span>
+            </label>
+            <input type="text" id="notes" name="entry.56149983">
+          </div>
+
+          <!-- Hidden input for Attendance data -->
           <input type="hidden" name="entry.316885821" id="gform_attendance" value="">
-          <input type="hidden" name="entry.56149983" id="gform_portion" value="">
 
           <div class="error-msg" id="form-error">
             <span class="he">נא למלא שם פרטי ושם משפחה</span>
@@ -811,6 +691,49 @@
           <div class="tick">✓</div>
           <h3 id="ty-title"></h3>
           <p id="ty-text"></p>
+          
+          <!-- Add to Calendar Button (Shows only if attending = yes) -->
+          <div id="calendar-btn-container" style="display:none;">
+             <a id="addToCalBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=חתונת+מוריה+ואיתן+-+Mariage+de+Moriah+%26+Ethan&dates=20261019T180000/20261019T233000&details=קבלת+פנים+ב-18:00,+חופה+ב-19:00&location=אולם+יער,+מושב+אורה,+ישראל" target="_blank" class="waze-btn" style="margin-top: 20px; font-size: 15px; background:var(--gold); border-color:var(--gold);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-inline-end:8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span class="he">הוספה ליומן</span>
+                <span class="fr">Ajouter au calendrier</span>
+             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN (Moved below RSVP) -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 30px;">
+        <span class="eyebrow">
+          <span class="he">הספירה התחילה</span>
+          <span class="fr">Le compte à rebours a commencé</span>
+        </span>
+      </div>
+      
+      <div class="countdown" id="countdown">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-days">00</div>
+          <div class="cd-label"><span class="he">ימים</span><span class="fr">Jours</span></div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-hours">00</div>
+          <div class="cd-label"><span class="he">שעות</span><span class="fr">Heures</span></div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-mins">00</div>
+          <div class="cd-label"><span class="he">דקות</span><span class="fr">Minutes</span></div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-secs">00</div>
+          <div class="cd-label"><span class="he">שניות</span><span class="fr">Secondes</span></div>
         </div>
       </div>
     </div>
@@ -885,7 +808,6 @@
   }
 
   var attending = 'yes';
-  var portion = 'all';
   var guestCount = 1;
 
   setupChoiceGroup('attend-group', function(val){
@@ -898,19 +820,17 @@
     }
   });
 
-  setupChoiceGroup('portion-group', function(val){ portion = val; });
-
   // ---------- Stepper ----------
   var countEl = document.getElementById('count-val');
   document.getElementById('inc').addEventListener('click', function(){
-    if(guestCount < 4){ guestCount++; countEl.textContent = guestCount; }
+    if(guestCount < 6){ guestCount++; countEl.textContent = guestCount; }
     document.getElementById('dec').disabled = guestCount <= 1;
-    document.getElementById('inc').disabled = guestCount >= 4;
+    document.getElementById('inc').disabled = guestCount >= 6;
   });
   document.getElementById('dec').addEventListener('click', function(){
     if(guestCount > 1){ guestCount--; countEl.textContent = guestCount; }
     document.getElementById('dec').disabled = guestCount <= 1;
-    document.getElementById('inc').disabled = guestCount >= 4;
+    document.getElementById('inc').disabled = guestCount >= 6;
   });
   document.getElementById('dec').disabled = true;
 
@@ -921,15 +841,11 @@
 
   function prepareData() {
     var attInput = document.getElementById('gform_attendance');
-    var portInput = document.getElementById('gform_portion');
 
-    // הנתונים תמיד נשלחים בעברית כדי להתאים לדרישות של Google Forms
     if (attending === 'yes') {
       attInput.value = "כן - " + guestCount + " מגיעים";
-      portInput.value = (portion === 'all') ? "להכל" : "רק לחופה";
     } else {
       attInput.value = "לא מגיעים";
-      portInput.value = "-";
     }
 
     submitBtn.disabled = true;
@@ -947,13 +863,18 @@
     if(attending === 'yes'){
       tyTitle.textContent = isHebrew ? 'תודה, ' + fname + '!' : 'Merci, ' + fname + ' !';
       tyText.textContent = isHebrew 
-          ? 'נרשמתם ל-' + guestCount + ' אורחים · ' + (portion === 'all' ? 'להכל' : 'רק לחופה') + '. מחכים לראותכם!'
-          : 'Votre présence est confirmée pour ' + guestCount + ' personne(s) · ' + (portion === 'all' ? 'Pour tout' : 'Uniquement la Houppa') + '. Au plaisir de vous y voir !';
+          ? 'נרשמתם ל-' + guestCount + ' אורחים. מחכים לראותכם!'
+          : 'Votre présence est confirmée pour ' + guestCount + ' personne(s). Au plaisir de vous y voir !';
+      
+      // הראה את כפתור ההוספה ליומן רק אם הם מגיעים
+      document.getElementById('calendar-btn-container').style.display = 'block';
     } else {
       tyTitle.textContent = isHebrew ? 'תודה על העדכון' : 'Merci de nous avoir prévenus';
       tyText.textContent = isHebrew 
           ? 'נצטער לא לראותכם, אבל נחשוב עליכם ביום הגדול 💛' 
           : 'Nous regrettons votre absence, mais nous penserons à vous lors du grand jour 💛';
+      
+      document.getElementById('calendar-btn-container').style.display = 'none';
     }
 
     form.style.display = 'none';
