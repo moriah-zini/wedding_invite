@@ -176,19 +176,19 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
+    gap:clamp(4px, 2vw, 20px);
+    flex-wrap:nowrap; /* Changed to nowrap so it never breaks to a new line */
     max-width:640px;
     margin:0 auto;
     direction:ltr; 
   }
   .cd-box{
     text-align:center;
-    padding:10px 15px;
+    padding:10px clamp(2px, 1.5vw, 15px);
   }
   .cd-num{
     font-family:'Frank Ruhl Libre', serif;
-    font-size:clamp(40px,7vw,56px);
+    font-size:clamp(28px, 6.5vw, 56px); /* Smarter scaling for mobile */
     color:var(--forest-deep);
     font-weight:400;
     font-variant-numeric:tabular-nums;
@@ -196,16 +196,16 @@
   }
   .cd-label{
     margin-top:6px;
-    font-size:14px;
-    letter-spacing:0.1em;
+    font-size:clamp(10px, 2.5vw, 14px);
+    letter-spacing:0.05em;
     color:var(--ink-soft);
   }
   [lang="fr"] .cd-label { text-transform: uppercase; }
   .cd-sep{
-    font-size:32px;
+    font-size:clamp(20px, 5vw, 32px);
     color:var(--gold-light);
     font-weight:300;
-    margin-top:-20px;
+    margin-top:-15px;
   }
 
   /* ---------- EVENT DETAILS ---------- */
