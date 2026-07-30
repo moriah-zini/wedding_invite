@@ -28,7 +28,7 @@
     font-weight:300;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
-    overflow-x: hidden; /* מונע גלילה אופקית בגלל תמונות גדולות */
+    overflow-x: hidden; 
   }
 
   a{color:inherit; text-decoration:none;}
@@ -64,7 +64,7 @@
   /* ---------- SECTIONS ---------- */
   .hero, .event-section, .rsvp-section {
     position: relative;
-    overflow: hidden; /* מונע מהשטח השקוף של הפרחים לעוות את האתר */
+    overflow: hidden;
   }
 
   /* ---------- FLORAL DECORATIONS ---------- */
@@ -72,42 +72,65 @@
     position: absolute;
     pointer-events: none;
     z-index: 0;
-    mix-blend-mode: multiply; /* משלב את הצבעים בטבעיות עם הרקע השמנתי */
-    opacity: 0.95;
+    mix-blend-mode: multiply; 
+    opacity: 0.85; /* שקיפות עדינה כדי שהטקסט יבלוט מעל */
+    transition: opacity 0.3s ease;
   }
   
-  /* Pink Flower: נמצא בצד ימין-למעלה של הקנבס */
+  /* אזור עליון - פרח ורוד בצד ימין למעלה */
   .flower-pink {
-    top: -20px;
-    right: -20px;
-    width: 600px;
+    top: 30px;
+    right: 30px;
+    /* הגודל ישתנה אוטומטית בין 120 ל-250 פיקסלים לפי גודל המסך */
+    width: clamp(120px, 18vw, 250px);
   }
-  html[dir="ltr"] .flower-pink { right: auto; left: -20px; transform: scaleX(-1); }
 
-  /* Blue Flower: נמצא באמצע-למעלה של הקנבס - לכן נזיז אותו שמאלה */
+  /* אזור עליון - פרח כחול בצד שמאל למטה של המסך הראשון */
   .flower-blue {
-    top: 30%;
-    left: 0;
-    width: 600px;
-    transform: translate(-38%, 0); /* מושך את מרכז התמונה לקצה המסך */
+    bottom: 40px;
+    left: 30px;
+    width: clamp(120px, 18vw, 250px);
   }
-  html[dir="ltr"] .flower-blue { left: auto; right: 0; transform: translate(38%, 0) scaleX(-1); }
 
-  /* Yellow Lily: נמצא בצד שמאל-למטה של הקנבס */
+  /* אזור אירוע - פרח צהוב בצד שמאל למטה */
   .flower-yellow {
-    bottom: -30px;
-    left: -30px;
-    width: 700px;
+    bottom: 30px;
+    left: 30px;
+    width: clamp(140px, 22vw, 280px);
   }
-  html[dir="ltr"] .flower-yellow { left: auto; right: -30px; transform: scaleX(-1); }
 
-  /* Pink Lotus: נמצא בצד ימין-למטה של הקנבס */
+  /* אזור אישור הגעה - פרח ורוד שני בצד ימין למטה */
   .flower-pink2 {
-    bottom: -20px;
-    right: -20px;
-    width: 600px;
+    bottom: 30px;
+    right: 30px;
+    width: clamp(120px, 18vw, 250px);
   }
-  html[dir="ltr"] .flower-pink2 { right: auto; left: -20px; transform: scaleX(-1); }
+
+  /* --- התאמות למובייל --- */
+  @media (max-width: 768px) {
+    .floral {
+      /* במסכים קטנים נהפוך את הפרחים לסימן מים שקוף יותר כדי להבטיח קריאות מושלמת של הטקסט */
+      opacity: 0.15; 
+    }
+    
+    /* מקרבים אותם קצת יותר לקצוות המסך בטלפון כדי לפנות מקום לטקסט */
+    .flower-pink {
+      top: 15px;
+      right: 15px;
+    }
+    .flower-blue {
+      bottom: 20px;
+      left: 15px;
+    }
+    .flower-yellow {
+      bottom: 20px;
+      left: 15px;
+    }
+    .flower-pink2 {
+      bottom: 20px;
+      right: 15px;
+    }
+  }
 
 
   /* ---------- TYPOGRAPHY ---------- */
@@ -144,10 +167,9 @@
     to{opacity:1; transform:translateY(0);}
   }
 
-  /* --- UPLOADED NAMES IMAGE --- */
   .names-image {
     width: 100%;
-    max-width: 520px; /* הוגדל מעט לנוכחות טובה יותר */
+    max-width: 520px; 
     height: auto;
     margin: 30px auto 40px;
     display: block;
@@ -265,7 +287,7 @@
 
   /* ---------- RSVP ---------- */
   .rsvp-section {
-    padding: 80px 0 150px;
+    padding: 80px 0 50px;
   }
   
   .rsvp-title {
@@ -448,7 +470,7 @@
 
   /* ---------- FOOTER ---------- */
   footer{
-    padding:40px 24px 80px;
+    padding: 0px 24px 80px;
     text-align:center;
     position: relative;
     z-index: 2;
@@ -458,6 +480,7 @@
     font-size:22px;
     color:var(--text-main);
     letter-spacing:0.1em;
+    
   }
   footer .foot-note{
     margin-top:10px;
@@ -643,8 +666,8 @@
           <div class="conditional open" id="extra-fields">
             <div class="field">
               <label>
-                <span class="he">כמה מגיעים? (עד 6 אורחים)</span>
-                <span class="fr">COMBIEN DE PERSONNES ? (MAX 6)</span>
+                <span class="he">כמה מגיעים?</span>
+                <span class="fr">COMBIEN DE PERSONNES ?</span>
               </label>
               <div class="stepper">
                 <button type="button" class="step-btn" id="dec">–</button>
