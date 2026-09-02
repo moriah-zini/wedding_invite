@@ -969,16 +969,17 @@
     });
 
     // ---------- Stepper ----------
+    var MAX_GUESTS = 2;
     var countEl = document.getElementById('count-val');
     document.getElementById('inc').addEventListener('click', function () {
-      if (guestCount < 6) { guestCount++; countEl.textContent = guestCount; }
+      if (guestCount < MAX_GUESTS) { guestCount++; countEl.textContent = guestCount; }
       document.getElementById('dec').disabled = guestCount <= 1;
-      document.getElementById('inc').disabled = guestCount >= 6;
+      document.getElementById('inc').disabled = guestCount >= MAX_GUESTS;
     });
     document.getElementById('dec').addEventListener('click', function () {
       if (guestCount > 1) { guestCount--; countEl.textContent = guestCount; }
       document.getElementById('dec').disabled = guestCount <= 1;
-      document.getElementById('inc').disabled = guestCount >= 6;
+      document.getElementById('inc').disabled = guestCount >= MAX_GUESTS;
     });
     document.getElementById('dec').disabled = true;
 
