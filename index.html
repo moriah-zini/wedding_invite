@@ -274,13 +274,7 @@
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
-    }
-
-    @media (max-width: 520px) {
-      .parents-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
+      align-items: start;
     }
 
     .grandma-name {
@@ -289,6 +283,35 @@
       margin-top: 4px;
       font-weight: 300;
       letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 520px) {
+      .hero-parents {
+        font-size: 15px;
+      }
+
+      .parents-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .grandma-name {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-parents {
+        font-size: 13.5px;
+      }
+
+      .parents-grid {
+        gap: 8px;
+      }
+
+      .grandma-name {
+        font-size: 11.5px;
+      }
     }
 
     /* ---------- EVENT DETAILS (SPLIT LAYOUT) ---------- */
@@ -704,16 +727,16 @@
       <div class="hero-parents">
         <div class="parents-grid">
           <div>
+            <span class="he">אברהם ואורלי זייני</span>
+            <span class="fr">Avraham & Orly Zini</span>
+          </div>
+          <div>
             <span class="he">מיכאל וסנדרין מערק</span>
             <span class="fr">Michaël & Sandrine Maarek</span>
             <div class="grandma-name">
-              <span class="he">והסבתא חנה דוש</span>
-              <span class="fr">et la grand-mère Annie Dhoosche</span>
+              <span class="he">חנה בוחבוט</span>
+              <span class="fr">Anna Bohbot</span>
             </div>
-          </div>
-          <div>
-            <span class="he">אברהם ואורלי זייני</span>
-            <span class="fr">Avraham & Orly Zini</span>
           </div>
         </div>
 
