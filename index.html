@@ -426,218 +426,68 @@
       text-transform: uppercase;
     }
 
-    /* ---------- RSVP ---------- */
+    /* ---------- RSVP (CLOSED) ---------- */
     .rsvp-section {
-      padding: 80px 0 50px;
+      padding: 70px 0 60px;
     }
 
     .rsvp-title {
       text-align: center;
       font-family: 'Frank Ruhl Libre', serif;
       font-size: 32px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       letter-spacing: 0.05em;
     }
 
-    .rsvp-card {
-      max-width: 520px;
+    .rsvp-closed-card {
+      max-width: 540px;
       margin: 0 auto;
-      background: transparent;
-    }
-
-    .field {
-      margin-bottom: 24px;
-    }
-
-    html[dir="rtl"] .field {
-      text-align: right;
-    }
-
-    html[dir="ltr"] .field {
-      text-align: left;
-    }
-
-    .field label {
-      display: block;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-
-    .field input[type=text],
-    .field input[type=tel] {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid var(--line);
-      padding: 10px 0;
-      font-family: 'Heebo', sans-serif;
-      font-size: 15px;
-      background: transparent;
-      color: var(--text-main);
-      transition: all 0.3s ease;
-    }
-
-    .field input[type=text]:focus,
-    .field input[type=tel]:focus {
-      outline: none;
-      border-bottom-color: var(--text-main);
-    }
-
-    .row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    @media (max-width:480px) {
-      .row-2 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .choice-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .choice-btn {
-      flex: 1 1 auto;
-      text-align: center;
-      padding: 12px;
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--line);
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .choice-btn:hover {
-      border-color: var(--text-main);
-    }
-
-    .choice-btn.active {
-      background: var(--text-main);
-      border-color: var(--text-main);
-      color: var(--bg);
-    }
-
-    .stepper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-      padding: 4px 0;
-    }
-
-    .step-btn {
-      width: 30px;
-      height: 30px;
-      border: none;
-      background: transparent;
-      font-size: 20px;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-
-    .step-btn:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    .step-val {
-      font-family: 'Frank Ruhl Libre', serif;
-      font-size: 22px;
-      color: var(--text-main);
-      min-width: 40px;
+      border-radius: var(--radius);
+      padding: 40px 28px;
       text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      position: relative;
+      z-index: 2;
     }
 
-    .conditional {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.5s ease, opacity 0.5s ease;
+    .rsvp-closed-badge {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+      font-weight: 500;
     }
 
-    .conditional.open {
-      max-height: 500px;
-      opacity: 1;
-    }
-
-    .submit-btn {
-      width: 100%;
-      margin-top: 20px;
-      padding: 16px;
-      background: var(--text-main);
-      color: var(--bg);
-      border: none;
-      font-family: 'Heebo', sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    [lang="fr"] .submit-btn {
+    [lang="fr"] .rsvp-closed-badge {
       text-transform: uppercase;
     }
 
-    .submit-btn:hover {
-      background: var(--text-muted);
-    }
-
-    .submit-btn:disabled {
-      background: var(--line);
-      cursor: wait;
-    }
-
-    .form-note {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 16px;
-      text-align: center;
-      letter-spacing: 0.05em;
-    }
-
-    .thankyou {
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    .thankyou h3 {
+    .rsvp-closed-heading {
       font-family: 'Frank Ruhl Libre', serif;
-      font-size: 28px;
+      font-size: 26px;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
     }
 
-    .thankyou p {
+    .rsvp-closed-text {
+      font-size: 16px;
       color: var(--text-muted);
-      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 24px;
     }
 
-    .error-msg {
-      color: #a33b3b;
-      font-size: 13px;
-      margin-top: -10px;
-      margin-bottom: 16px;
-      display: none;
-    }
-
-    html[dir="rtl"] .error-msg {
-      text-align: right;
-    }
-
-    html[dir="ltr"] .error-msg {
-      text-align: left;
-    }
-
-    .error-msg.show {
-      display: block;
+    .rsvp-closed-contact {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 20px;
+      letter-spacing: 0.03em;
     }
 
     /* ---------- COUNTDOWN ---------- */
@@ -845,106 +695,35 @@
         <span class="fr">RSVP</span>
       </h2>
 
-      <div class="rsvp-card" id="rsvp-card">
-
-        <script>var formSubmitted = false;</script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-          onload="if(formSubmitted) { showThankYou(); }"></iframe>
-
-        <form id="rsvp-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSdzm7ATyOWKsjQjGq6qUvjlcEWiQ78FaDbN3ovkrCvVZVIhgw/formResponse"
-          method="POST" target="hidden_iframe" onsubmit="prepareData(); formSubmitted=true;">
-
-          <div class="row-2">
-            <div class="field">
-              <label for="fname">
-                <span class="he">שם פרטי</span><span class="fr">PRÉNOM</span>
-              </label>
-              <input type="text" id="fname" name="entry.1557925714" required autocomplete="given-name">
-            </div>
-            <div class="field">
-              <label for="lname">
-                <span class="he">שם משפחה</span><span class="fr">NOM</span>
-              </label>
-              <input type="text" id="lname" name="entry.791880527" required autocomplete="family-name">
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="phone">
-              <span class="he">טלפון</span><span class="fr">TÉLÉPHONE</span>
-            </label>
-            <input type="tel" id="phone" name="entry.147835896" autocomplete="tel">
-          </div>
-
-          <div class="field">
-            <label>
-              <span class="he">האם תגיעו לחגוג איתנו?</span>
-              <span class="fr">SEREZ-VOUS PARMI NOUS ?</span>
-            </label>
-            <div class="choice-group" id="attend-group">
-              <div class="choice-btn active" data-val="yes">
-                <span class="he">מגיעים בשמחה</span><span class="fr">Oui, avec joie</span>
-              </div>
-              <div class="choice-btn" data-val="no">
-                <span class="he">לצערינו לא נוכל</span><span class="fr">Malheureusement, non</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="conditional open" id="extra-fields">
-            <div class="field">
-              <label>
-                <span class="he">כמה מגיעים?</span>
-                <span class="fr">COMBIEN DE PERSONNES ?</span>
-              </label>
-              <div class="stepper">
-                <button type="button" class="step-btn" id="dec">–</button>
-                <div class="step-val" id="count-val">1</div>
-                <button type="button" class="step-btn" id="inc">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label>
-              <span class="he">הערות</span>
-              <span class="fr">REMARQUES (OPTIONNEL)</span>
-            </label>
-            <input type="text" id="notes" name="entry.56149983">
-          </div>
-
-          <input type="hidden" name="entry.316885821" id="gform_attendance" value="">
-
-          <div class="error-msg" id="form-error">
-            <span class="he">נא למלא שם פרטי ושם משפחה</span>
-            <span class="fr">Veuillez remplir votre prénom et votre nom.</span>
-          </div>
-
-          <button type="submit" class="submit-btn" id="submit-btn">
-            <span class="he">אישור הגעה</span>
-            <span class="fr">Confirmer</span>
-          </button>
-          <div class="form-note">
-            <span class="he">התשובה תישלח למוריה ואיתן</span>
-            <span class="fr">La réponse sera envoyée à Moriah et Ethan</span>
-          </div>
-        </form>
-
-        <div class="thankyou" id="thankyou" style="display:none;">
-          <h3 id="ty-title"></h3>
-          <p id="ty-text"></p>
-
-          <!-- Add to Calendar Button -->
-          <div id="calendar-btn-container" style="display:none; text-align: center;">
-            <a id="addToCalBtn"
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=חתונת+מוריה+ואיתן+-+Mariage+de+Moriah+%26+Ethan&dates=20261019T150000Z/20261019T203000Z&details=קבלת+פנים+ב-18:00,+חופה+ב-18:45&location=אולם+יער,+מושב+אורה,+ישראל"
-              target="_blank" class="waze-btn" style="margin-top: 20px;">
-              <span class="he">הוספה ליומן</span>
-              <span class="fr">Ajouter au calendrier</span>
-            </a>
-          </div>
+      <div class="rsvp-closed-card">
+        <div class="rsvp-closed-badge">
+          <span class="he">ההרשמה נסגרה</span>
+          <span class="fr">Inscriptions closes</span>
         </div>
+
+        <h3 class="rsvp-closed-heading">
+          <span class="he">מחכים ונרגשים לראותכם!</span>
+          <span class="fr">Nous avons hâte de célébrer avec vous !</span>
+        </h3>
+
+        <p class="rsvp-closed-text">
+          <span class="he">אישורי ההגעה לאירוע נסגרו.<br>תודה רבה לכל מי שאישר הגעה, מצפים לחגוג יחד בשמחתנו.</span>
+          <span class="fr">Les confirmations de présence sont désormais closes.<br>Un grand merci à tous ceux qui ont répondu, nous nous réjouissons de célébrer avec vous.</span>
+        </p>
+
+        <div style="text-align: center;">
+          <a class="waze-btn"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=חתונת+מוריה+ואיתן+-+Mariage+de+Moriah+%26+Ethan&dates=20261019T150000Z/20261019T203000Z&details=קבלת+פנים+ב-18:00,+חופה+ב-18:45&location=אולם+יער,+מושב+אורה,+ישראל"
+            target="_blank" rel="noopener">
+            <span class="he">הוספה ליומן</span>
+            <span class="fr">Ajouter au calendrier</span>
+          </a>
+        </div>
+
+        <p class="rsvp-closed-contact">
+          <span class="he">לכל שאלה או עדכון, מוזמנים לפנות אלינו ישירות</span>
+          <span class="fr">Pour toute question ou information, n'hésitez pas à nous contacter directement</span>
+        </p>
       </div>
     </div>
   </section>
@@ -997,106 +776,6 @@
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    // ---------- Choice groups ----------
-    function setupChoiceGroup(id, onChange) {
-      var group = document.getElementById(id);
-      var btns = group.querySelectorAll('.choice-btn');
-      btns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          btns.forEach(function (b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          if (onChange) onChange(btn.dataset.val);
-        });
-      });
-    }
-
-    var attending = 'yes';
-    var guestCount = 1;
-
-    setupChoiceGroup('attend-group', function (val) {
-      attending = val;
-      var extra = document.getElementById('extra-fields');
-      if (val === 'yes') {
-        extra.classList.add('open');
-      } else {
-        extra.classList.remove('open');
-      }
-    });
-
-    // ---------- Stepper ----------
-    var MAX_GUESTS = 2;
-    var countEl = document.getElementById('count-val');
-    document.getElementById('inc').addEventListener('click', function () {
-      if (guestCount < MAX_GUESTS) { guestCount++; countEl.textContent = guestCount; }
-      document.getElementById('dec').disabled = guestCount <= 1;
-      document.getElementById('inc').disabled = guestCount >= MAX_GUESTS;
-    });
-    document.getElementById('dec').addEventListener('click', function () {
-      if (guestCount > 1) { guestCount--; countEl.textContent = guestCount; }
-      document.getElementById('dec').disabled = guestCount <= 1;
-      document.getElementById('inc').disabled = guestCount >= MAX_GUESTS;
-    });
-    document.getElementById('dec').disabled = true;
-
-    // ---------- Form submit preparation ----------
-    var form = document.getElementById('rsvp-form');
-    var submitBtn = document.getElementById('submit-btn');
-    var errorMsg = document.getElementById('form-error');
-
-    function prepareData() {
-      var attInput = document.getElementById('gform_attendance');
-
-      if (attending === 'yes') {
-        attInput.value = "כן - " + guestCount + " מגיעים";
-      } else {
-        attInput.value = "לא מגיעים";
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.querySelector('.he').textContent = 'שולח...';
-      submitBtn.querySelector('.fr').textContent = 'Envoi en cours...';
-    }
-
-    // ---------- Thank You Message ----------
-    function showThankYou() {
-      var isHebrew = document.documentElement.lang === 'he';
-      var fname = document.getElementById('fname').value.trim();
-      var tyTitle = document.getElementById('ty-title');
-      var tyText = document.getElementById('ty-text');
-
-      if (attending === 'yes') {
-        tyTitle.textContent = isHebrew ? 'תודה, ' + fname + '!' : 'Merci, ' + fname + ' !';
-        tyText.textContent = isHebrew
-          ? 'נרשמתם ל-' + guestCount + ' אורחים. מחכים לראותכם!'
-          : 'Votre présence est confirmée pour ' + guestCount + ' personne(s). Au plaisir de vous y voir !';
-
-        document.getElementById('calendar-btn-container').style.display = 'block';
-      } else {
-        tyTitle.textContent = isHebrew ? 'תודה על העדכון' : 'Merci de nous avoir prévenus';
-        tyText.textContent = isHebrew
-          ? 'נצטער לא לראותכם, אבל נחשוב עליכם ביום הגדול 💛'
-          : 'Nous regrettons votre absence, mais nous penserons à vous lors du grand jour 💛';
-
-        document.getElementById('calendar-btn-container').style.display = 'none';
-      }
-
-      form.style.display = 'none';
-      document.getElementById('thankyou').style.display = 'block';
-    }
-
-    // Basic Validation
-    form.addEventListener('submit', function (e) {
-      var fname = document.getElementById('fname').value.trim();
-      var lname = document.getElementById('lname').value.trim();
-      if (!fname || !lname) {
-        e.preventDefault();
-        errorMsg.classList.add('show');
-        formSubmitted = false;
-        return false;
-      }
-      errorMsg.classList.remove('show');
-    });
 
   </script>
 </body>
